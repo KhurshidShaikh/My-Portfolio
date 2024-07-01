@@ -13,7 +13,7 @@ import {
     weatherapp,
     mcqgame,
     movix,
-  } from "../assets/index";
+  } from "../assets";
   
   export const navLinks = [
     {
