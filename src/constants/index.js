@@ -14,6 +14,8 @@ import {
     mcqgame,
     movix,
   } from "../assets/index.js";
+
+  import html5 from "../assets/tech/html.png"
   
   export const navLinks = [
     {
@@ -40,7 +42,7 @@ import {
   const technologies = [
     {
       name: "HTML 5",
-      icon: html,
+      icon: html5,
     },
     {
       name: "CSS 3",
