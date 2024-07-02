@@ -11,9 +11,11 @@ const Tech = () => {
     <h2 className={styles.sectionHeadText}>Tech Stack. </h2>
      <div className='flex w-full flex-wrap flex-row justify-center gap-10 mt-4'>
     {technologies.map((technology)=>(
-      <div className='w-28 h-28 ' key={technology.name}>
-         <BallCanvas icon={technology.icon}/>
+     technology.icon && (
+        <div className="w-28 h-28" key={technology.name}>
+          <BallCanvas icon={technology.icon} />
         </div>
+      )
     ))}
 
     </div>
