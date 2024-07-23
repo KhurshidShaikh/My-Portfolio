@@ -25,32 +25,38 @@ const Contact = () => {
    }
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    emailjs.send(
-     "service_hrjgh5c",
-     "template_7ub6g5e",
-     {
-      from_name:form.name,
-      to_name:"Khurshid",
-      from_email:form.email,
-      to_email:"shaikhkhurshid112277@gmail.com",
-      message:form.message,
-     },
-     "hOykb9KQ9J3dtSry5"
-    ).then(()=>{
-      setLoading(false)
-      alert("Email sent successfully !")
-
-      setForm({
-        name:"",
-        email:"",
-        message:"",
+    if(form.name!==' ' && form.email!==''&& form.message!==''){
+      setLoading(true);
+      emailjs.send(
+       "service_hrjgh5c",
+       "template_7ub6g5e",
+       {
+        from_name:form.name,
+        to_name:"Khurshid",
+        from_email:form.email,
+        to_email:"shaikhkhurshid112277@gmail.com",
+        message:form.message,
+       },
+       "hOykb9KQ9J3dtSry5"
+      ).then(()=>{
+        setLoading(false)
+        alert("Email sent successfully !")
+  
+        setForm({
+          name:"",
+          email:"",
+          message:"",
+        })
+      },(error)=>{
+         setLoading(false);
+         alert("Something went wrong ")
       })
-    },(error)=>{
-       setLoading(false);
-       alert("Something went wrong ")
-    })
-
+  
+    }
+    else{
+      alert("please state your details")
+    }
+   
 
    }
 
